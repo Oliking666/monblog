@@ -18,7 +18,7 @@
                     Publié le {{ article.date_published|date:"d F Y" }} par {{ article.author.username }}
                 </p>
                 <p class="card-text">{{ article.content|truncatewords:30 }}</p>
-                <a href="{% url ‘article_detail’ article.slug %}" class="btn btn-primary">Lire la suite</a>
+                <a href="{% url 'article_detail' article.slug %}" class="btn btn-primary">Lire la suite</a>
             </div>
         </div>
         {% endfor %}

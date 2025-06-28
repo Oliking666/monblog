@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from monblog.validators import validate_image_extension, validate_file_size
+from blog.validators import validate_image_extension, validate_file_size
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 class Article(models.Model):

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'portfolio',
     'pages',
     'contact',
+    'blog',
     'django.contrib.humanize',
     'django.contrib.admin',
     'django.contrib.auth',
