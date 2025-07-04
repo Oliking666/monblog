@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h2 class="mb-4">Derniers articles</h2>
+        {% for article in latest_articles %}
+        <div class="card mb-4">
+            {% if article.image %}
+            <img src="{{ article.image.url }}" class="card-img-top" alt="{{ article.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h3 class="card-title">{{ article.title }}</h3>
+                <p class="card-text text-muted">
+                    Publié le {{ article.date_published|date:"d F Y" }} par {{ article.author.username }}
+                </p>
+                <p class="card-text">{{ article.content|truncatewords:30 }}</p>
+                <a href="{% url 'article_detail' article.slug %}" class="btn btn-primary">Lire la suite</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <h4>À propos</h4>
+                <p>Bienvenue sur mon blog personnel où je partage mes réflexions, projets et expériences.</p>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-body">
+                <h4>Derniers projets</h4>
+                <div class="list-group">
+                    {% for project in latest_projects %}
+                    <a href="{% url 'project_detail' project.id %}" class="list-group-item list-group-item-action">
+                        {{ project.title }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

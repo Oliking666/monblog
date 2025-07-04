@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<p>Django est un framework web puissant pour le développement d'applications web en Python. Il permet de créer des sites sécurisés, performants et facilement maintenables.</p>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des articles</title>
+</head>
+<body>
+    <h1>Articles</h1>
+    {% for article in articles %}
+        <div>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.content|truncatewords:20 }}</p>
+        </div>
+    {% empty %}
+        <p>Aucun article trouvé.</p>
+    {% endfor %}
+</body>
+</html>

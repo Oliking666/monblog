@@ -9,8 +9,11 @@ psycopg2-binary==2.9.10
 sqlparse==0.5.3
 tzdata==2025.2
 whitenoise==6.9.0
+<<<<<<< HEAD
 Django>=4.2
 Pillow
 gunicorn
 whitenoise
 dj-database-url
+=======
+>>>>>>> 91e62075ce2d59c4805ba03a87785ef6f5e2ddee
