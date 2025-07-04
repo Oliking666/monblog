@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>AFODESE - Accueil</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Bienvenue à AFODESE</h1>
+    <h2>Nos produits :</h2>
+    <ul>
+        {% for produit in produits %}
+            <li>
+                <img src="{{ produit.image.url }}" width="100">
+                <h3>{{ produit.nom }}</h3>
+                <p>{{ produit.description }}</p>
+                <p><strong>{{ produit.prix }} FCFA</strong></p>
+                <a href="{% url 'ajouter_panier' produit.id %}">Ajouter au panier</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'panier' %}">Voir le panier</a>
+</body>
+</html>
